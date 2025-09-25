@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHIR Operations - Ayush FHIR Microservice</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ayush FHIR Microservice</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/static/search.html">Search & Translate</a></li>
+                <li><a href="/static/ingest.html">Ingest Data</a></li>
+                <li><a href="/static/fhir.html">FHIR Operations</a></li>
+                <li><a href="/docs">API Docs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>FHIR Operations</h2>
+        <p>Interact with FHIR resources, including ingesting FHIR Bundles and generating CodeSystems/ConceptMaps.</p>
+
+        <section>
+            <h3>Ingest FHIR Bundle</h3>
+            <p>Upload a FHIR Bundle (JSON) containing Encounter, Patient, and Condition resources.</p>
+            <form id="ingestFhirBundleForm">
+                <label for="fhirBundleFile">Select FHIR Bundle (JSON) File:</label>
+                <input type="file" id="fhirBundleFile" name="fhirBundleFile" accept=".json" required>
+                <button type="submit">Ingest Bundle</button>
+            </form>
+            <div class="results-container" id="ingestBundleResults" style="display: none;">
+                <h3>Ingestion Status</h3>
+                <pre id="ingestBundleOutput"></pre>
+            </div>
+        </section>
+
+        <section style="margin-top: 2rem;">
+            <h3>Generate FHIR CodeSystem</h3>
+            <p>Generate a FHIR CodeSystem resource from the currently ingested NAMASTE data.</p>
+            <button id="generateCodeSystemBtn">Generate CodeSystem</button>
+            <div class="results-container" id="codeSystemResults" style="display: none;">
+                <h3>CodeSystem JSON</h3>
+                <pre id="codeSystemOutput"></pre>
+            </div>
+        </section>
+
+        <section style="margin-top: 2rem;">
+            <h3>Generate FHIR ConceptMap</h3>
+            <p>Generate a FHIR ConceptMap resource from the currently ingested NAMASTE data and its ICD-11 TM2 mappings.</p>
+            <button id="generateConceptMapBtn">Generate ConceptMap</button>
+            <div class="results-container" id="conceptMapResults" style="display: none;">
+                <h3>ConceptMap JSON</h3>
+                <pre id="conceptMapOutput"></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ayush FHIR Microservice. All rights reserved.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>

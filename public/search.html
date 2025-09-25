@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search & Translate - Ayush FHIR Microservice</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ayush FHIR Microservice</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/static/search.html">Search & Translate</a></li>
+                <li><a href="/static/ingest.html">Ingest Data</a></li>
+                <li><a href="/static/fhir.html">FHIR Operations</a></li>
+                <li><a href="/docs">API Docs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Search & Translate Terms</h2>
+        <p>Search for NAMASTE or ICD-11 terms and get their translations.</p>
+
+        <form id="searchForm">
+            <label for="searchInput">Search Term:</label>
+            <input type="text" id="searchInput" name="searchInput" placeholder="e.g., Amlapitta, Dyspepsia" required>
+            <button type="button" id="searchButton">Search</button>
+        </form>
+
+        <div class="results-container" id="searchResultsDiv">
+            <h3>Search Results</h3>
+            <!-- Search results will be loaded here by script.js -->
+        </div>
+
+        <form id="translateForm" style="margin-top: 2rem;">
+            <h3>Translate a Code</h3>
+            <label for="translateCode">Code to Translate (e.g., AY001, TM2-AY134):</label>
+            <input type="text" id="translateCode" name="translateCode" placeholder="Enter code" required>
+            <button type="submit">Translate</button>
+        </form>
+
+        <div class="results-container" id="translationResults" style="display: none;">
+            <h3>Translation Results</h3>
+            <pre id="translationOutput"></pre>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ayush FHIR Microservice. All rights reserved.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingest Data - Ayush FHIR Microservice</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ayush FHIR Microservice</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/static/search.html">Search & Translate</a></li>
+                <li><a href="/static/ingest.html">Ingest Data</a></li>
+                <li><a href="/static/fhir.html">FHIR Operations</a></li>
+                <li><a href="/docs">API Docs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Ingest NAMASTE CSV Data</h2>
+        <p>Upload a NAMASTE CSV file to ingest terms into the system.</p>
+
+        <form id="ingestForm">
+            <label for="csvFile">Select CSV File:</label>
+            <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+            <button type="submit">Ingest CSV</button>
+        </form>
+
+        <div class="results-container" id="ingestResults" style="display: none;">
+            <h3>Ingestion Status</h3>
+            <pre id="ingestOutput"></pre>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ayush FHIR Microservice. All rights reserved.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
